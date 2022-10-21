@@ -1,0 +1,15 @@
+C:\Users\miria\Back-ER02\bin\Debug\net6.0\Back-ER02.exe
+C:\Users\miria\Back-ER02\bin\Debug\net6.0\Back-ER02.deps.json
+C:\Users\miria\Back-ER02\bin\Debug\net6.0\Back-ER02.runtimeconfig.json
+C:\Users\miria\Back-ER02\bin\Debug\net6.0\Back-ER02.dll
+C:\Users\miria\Back-ER02\bin\Debug\net6.0\Back-ER02.pdb
+C:\Users\miria\Back-ER02\obj\Debug\net6.0\Back-ER02.csproj.AssemblyReference.cache
+C:\Users\miria\Back-ER02\obj\Debug\net6.0\Back-ER02.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\miria\Back-ER02\obj\Debug\net6.0\Back-ER02.AssemblyInfoInputs.cache
+C:\Users\miria\Back-ER02\obj\Debug\net6.0\Back-ER02.AssemblyInfo.cs
+C:\Users\miria\Back-ER02\obj\Debug\net6.0\Back-ER02.csproj.CoreCompileInputs.cache
+C:\Users\miria\Back-ER02\obj\Debug\net6.0\Back-ER02.dll
+C:\Users\miria\Back-ER02\obj\Debug\net6.0\refint\Back-ER02.dll
+C:\Users\miria\Back-ER02\obj\Debug\net6.0\Back-ER02.pdb
+C:\Users\miria\Back-ER02\obj\Debug\net6.0\Back-ER02.genruntimeconfig.cache
+C:\Users\miria\Back-ER02\obj\Debug\net6.0\ref\Back-ER02.dll

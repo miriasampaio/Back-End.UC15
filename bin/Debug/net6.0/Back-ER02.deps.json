@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Back-ER02/1.0.0": {
+        "runtime": {
+          "Back-ER02.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Back-ER02/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
