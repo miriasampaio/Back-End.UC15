@@ -34,9 +34,37 @@ namespace Back_ER02.classes
 
         public bool ValidarDataNasc(DateTime dataNasc)
         {
-            throw new NotImplementedException();
+            DateTime dataAtual = DateTime.Today;
+            double anos = (dataAtual - dataNasc).TotalDays/365;
+            Console.WriteLine(anos);
+
+            if (anos >= 18)
+            {
+                return true; 
+            }
+
+            return false;
         }
-    }
+
+        public bool ValidarDataNasc(string dataNasc)  
+        {
+            //----------*dataCvt = data convertida--------------
+           if (DateTime.TryParse(dataNasc, out DateTime dataCvt))
+           {
+             DateTime dataAtual = DateTime.Today;
+             double anos = (dataAtual - dataCvt).TotalDays/365;
+             Console.WriteLine(anos);
+
+              if (anos >= 18)
+              {
+                return true; 
+              } 
+
+           }
+           return false;
+        
+        }
+    } 
 }
 
   
