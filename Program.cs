@@ -2,6 +2,7 @@
 
 PessoaFisica NPF = new PessoaFisica();
 Endereco NEndFisico = new Endereco();
+PessoaJuridica PJN = new PessoaJuridica();
 
 NPF.nome = "Brenda";
 NPF.cpf = "25698460739"; 
@@ -22,7 +23,23 @@ Logradouro: {NPF.endereco.logradouro} {NPF.endereco.numero} {NPF.endereco.comple
 seu rendimento é de: {NPF.rendimento}");
 
 
-//--------
+Endereco novoEndPj = new Endereco();
+PJN.nome = "Nome Pessoa Juridica";
+PJN.razaoSocial = "Razão Socia PJ";
+PJN.cnpj = "00.476.645/0001-03";
+
+novoEndPj.logradouro = "Rua Niteroi";
+novoEndPj.numero = 180;
+
+PJN.endereco = novoEndPj;
+
+Console.WriteLine(@$"
+Nome: {PJN.nome}
+Razão Social: {PJN.razaoSocial}
+CNPJ: {PJN.cnpj} - Valido: {PJN.ValidarCnpj(PJN.cnpj)}
+");
+
+//--------------------------------------------------------------------------------------------------
 //Console.WriteLine($"Olá,  {NPF.nome}! seu CPF: {NPF.cpf}");
 
 //pessoa fisica ER03--------
