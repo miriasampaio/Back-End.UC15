@@ -56,91 +56,115 @@ internal class Program
                     Console.WriteLine($"Digite o nome da pessoa fisica");
                     NPF.nome = Console.ReadLine();
 
-                    bool dataValida;
+                //     bool dataValida;
 
-                 do
-                 {
-                    Console.WriteLine($"Digite data de nascimento DD/MM/AAAA");
-                    string? dataNascimento = Console.ReadLine();
+                //  do
+                //  {
+                //     Console.WriteLine($"Digite data de nascimento DD/MM/AAAA");
+                //     string? dataNascimento = Console.ReadLine();
 
-                    dataValida = NPF.ValidarDataNasc(dataNascimento);
-                     if (dataValida)
-                     {
-                        DateTime.TryParse(dataNascimento, out DateTime dataConvertida);
-                        NPF.dataNasc = dataConvertida;
-                     } else {
+                //     dataValida = NPF.ValidarDataNasc(dataNascimento);
+                //      if (dataValida)
+                //      {
+                //         DateTime.TryParse(dataNascimento, out DateTime dataConvertida);
+                //         NPF.dataNasc = dataConvertida;
+                //      } else {
 
-                        Console.WriteLine("Data inválida. Digite corretamente DD/MM/AAAA");
-                        Thread.Sleep(3000);
-                     }
-                } while (dataValida == false); //repertir
+                //         Console.WriteLine("Data inválida. Digite corretamente DD/MM/AAAA");
+                //         Thread.Sleep(3000);
+                //      }
+                // } while (dataValida == false); //repertir
 
-                    Console.WriteLine($"Digite o número de CPF");
-                    NPF.cpf = Console.ReadLine();
+                //     Console.WriteLine($"Digite o número de CPF");
+                //     NPF.cpf = Console.ReadLine();
 
-                    Console.WriteLine($"Digite o valor de rendimento mensal *Apenas números* ");
-                    NPF.rendimento = float.Parse(Console.ReadLine());
+                //     Console.WriteLine($"Digite o valor de rendimento mensal *Apenas números* ");
+                //     NPF.rendimento = float.Parse(Console.ReadLine());
 
-                    Console.WriteLine($"Digite o logradouro");
-                    NEndFisico.logradouro = Console.ReadLine();
+                //     Console.WriteLine($"Digite o logradouro");
+                //     NEndFisico.logradouro = Console.ReadLine();
 
-                    Console.WriteLine($"Digite o número");
-                    NEndFisico.numero = int.Parse(Console.ReadLine());
+                //     Console.WriteLine($"Digite o número");
+                //     NEndFisico.numero = int.Parse(Console.ReadLine());
 
-                    Console.WriteLine($"Digite o complemento");
-                    NEndFisico.complemento = Console.ReadLine();
+                //     Console.WriteLine($"Digite o complemento");
+                //     NEndFisico.complemento = Console.ReadLine();
 
-                    Console.WriteLine($"Este endereço é comercial? *S/N");
-                    string? endCom = Console.ReadLine().ToUpper();
+                //     Console.WriteLine($"Este endereço é comercial? *S/N");
+                //     string? endCom = Console.ReadLine().ToUpper();
 
-                      if (endCom == "S")
-                      {
-                          NEndFisico.endComercial = true;
-                      }
-                      else
-                      {
-                          NEndFisico.endComercial = false;
-                      }
+                //       if (endCom == "S")
+                //       {
+                //           NEndFisico.endComercial = true;
+                //       }
+                //       else
+                //       {
+                //           NEndFisico.endComercial = false;
+                //       }
 
-                    NPF.endereco = NEndFisico;
+                //     NPF.endereco = NEndFisico;
 
-                    listPf.Add(NPF);
+                //     listPf.Add(NPF);
+                    
+                    StreamWriter sw = new StreamWriter($"{NPF.nome}.txt");
+                    sw.WriteLine(NPF.nome);
+                    sw.Close();
+
+                       Console.ForegroundColor = ConsoleColor.Green;
+                      Console.WriteLine($"Usuário cadastrado!");
+                      Console.ResetColor();
+                      Thread.Sleep(2000);
                         break;
 
                         case "2":
-                        Console.Clear();
+                    //     Console.Clear();
 
-                        if (listPf.Count > 0)
-                        {
+                    //     if (listPf.Count > 0)
+                    //     {
                             
-                        foreach (PessoaFisica cadaP in listPf)
-                        {
-                            Console.Clear();
-                            Console.WriteLine(@$"
-                            Nome: {cadaP.nome}
-                            Endereço: {cadaP.endereco.logradouro}, {cadaP.endereco.numero}
-                            Data de Nascimento: {cadaP.dataNasc.ToString("d")}
-                            imposto a pagar: {cadaP.CalcularImposto(cadaP.rendimento).ToString("C")}
+                    //     foreach (PessoaFisica cadaP in listPf)
+                    //     {
+                    //         Console.Clear();
+                    //         Console.WriteLine(@$"
+                    //         Nome: {cadaP.nome}
+                    //         Endereço: {cadaP.endereco.logradouro}, {cadaP.endereco.numero}
+                    //         Data de Nascimento: {cadaP.dataNasc.ToString("d")}
+                    //         imposto a pagar: {cadaP.CalcularImposto(cadaP.rendimento).ToString("C")}
                             
-                            ") ;
+                    //         ") ;
+
+                    //         Console.WriteLine($"Aperte ENTER para prosseguir");
+                    //         Console.ReadLine();
+                    //     }
+                    //     } else {
+                    //          Console.Clear();
+                    //  Console.ForegroundColor = ConsoleColor.Red;
+                    //  Console.WriteLine($"Opção inválida, lista vazia. Cadastre uma nova Pessoa Fisica");
+                    //  Console.ResetColor();
+                    //  Thread.Sleep(2500);
+                    //     } 
+
+                    using (StreamReader sr =new StreamReader("miriã.txt"))
+                    {
+                        string linha;
+
+                        while ((linha = sr.ReadLine()) != null)
+                        {
+                             Console.WriteLine(linha);
+                        }
+                        Console.WriteLine($"Aperte ENTER para continuar");
 
                             Console.WriteLine($"Aperte ENTER para prosseguir");
-                            Console.ReadLine();
-                        }
-                        } else {
-                             Console.Clear();
-                     Console.ForegroundColor = ConsoleColor.Red;
-                     Console.WriteLine($"Opção inválida, lista vazia. Cadastre uma nova Pessoa Fisica");
-                     Console.ResetColor();
-                     Thread.Sleep(2500);
-                        }
+                        Console.ReadLine();
+                    }
+                
                          break;
 
                         case "0":
                         Console.Clear();
                         Console.WriteLine($"Voltando ao menu...");
                         Thread.Sleep(1500);
-                        break;
+                         break;
 
                     default:
                      Console.Clear();
@@ -194,14 +218,28 @@ internal class Program
 
                     PJN.endereco = novoEndPj;
 
-                    Console.WriteLine(@$"
-        Nome: {PJN.nome}
-        Razão Social: {PJN.razaoSocial}
-        CNPJ: {PJN.cnpj} - Valido: {PJN.ValidarCnpj(PJN.cnpj)}
-        ");
+                    PJN.Inserir(PJN);
 
-                    Console.WriteLine("Aperte Enter para sair");
-                    Console.ReadLine();
+                    
+                    //Console.Clear();
+                     
+
+                     
+                    List <PessoaJuridica> listExibiçãoPJ = PJN.LerArquivo();
+
+                    foreach (PessoaJuridica cadaItem in listExibiçãoPJ)
+                    {
+                         Console.WriteLine(@$"
+                         Nome: {cadaItem.nome}
+                         Razão Social: {cadaItem.razaoSocial}
+                         CNPJ: {cadaItem.cnpj} 
+                         ");
+
+                     Console.WriteLine("Aperte Enter para continuar");
+                     Console.ReadLine();
+
+                    }
+
                     break;
 
                 case "3":
