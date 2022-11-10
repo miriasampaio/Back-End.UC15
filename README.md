@@ -16,7 +16,7 @@ O projeto visa o estudo da linguagem C# no desenvolvimento de um sistema back-en
 * C#
 
 ### *Pré requisitos de instalação*
-* instalãção do .NET SDK
+* instalação do .NET SDK
 * utilização de editor de código (Visual Studio Code)
 
 ### *Execução da aplicação*
